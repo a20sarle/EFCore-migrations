@@ -30,6 +30,10 @@
                 entity.Property(e => e.FirstName)
                     .HasColumnName("firstname")
                     .HasMaxLength(255);
+
+                entity.Property(e => e.LastName)
+                    .HasColumnName("lastname")
+                    .HasMaxLength(255);
             });
         }
     }
