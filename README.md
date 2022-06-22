@@ -20,6 +20,7 @@ Package manager Console                             | CLI                       
 `Update-Databse`                                    | `dotnet ef database update`                | Updates the database based on the migration history
 `Update-Database -Migration:"<migrationname>"`      | ?                                          | Rollback to a specific version of the database 
 `Remove-Migration`                                  | `dotnet ef migrations remove`              | removes the last migration
+`Update-Database -Migration 0`                      | ?                                          | reset / empty database
 
 
 ## Update database Step by step
