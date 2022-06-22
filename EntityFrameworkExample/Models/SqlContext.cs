@@ -25,8 +25,7 @@
                 entity.HasKey(e => e.Id);
 
                 entity.Property(e => e.Id)
-                    .HasColumnName("id")
-                    .ValueGeneratedNever(); //.HasDefaultValueSql("(newsequentialid())"); ?
+                    .HasColumnName("id");
 
                 entity.Property(e => e.FirstName)
                     .HasColumnName("firstname")
