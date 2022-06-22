@@ -1,14 +1,16 @@
 using Microsoft.EntityFrameworkCore;
 using MigrationCodeFirst.Models;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddControllers();
 
-var connection = "";
+var connection = "Data Source=SESDEW6X96QV2\\SQL2017;Initial Catalog=migrationTest;Integrated Security=true; TrustServerCertificate=True;";
 builder.Services.AddDbContext<SqlContext>(options =>
 {
     options.UseSqlServer(connection);
@@ -24,6 +26,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.MapControllers();
 
 //var summaries = new[]
 //{
