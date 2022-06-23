@@ -29,7 +29,8 @@
 
                 entity.Property(e => e.FirstName)
                     .HasColumnName("firstname")
-                    .HasMaxLength(255);
+                    .HasMaxLength(255)
+                    .IsRequired();
 
                 entity.Property(e => e.LastName)
                     .HasColumnName("lastname")
