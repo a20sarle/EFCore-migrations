@@ -1,5 +1,5 @@
 Database using EF Core Code First
-# init
+# Init
 
 ## Requirements for updating database using migrations
 - ```context.Database.Migrate();``` must be used in the builder / Startup.cs file. ```EnsureCreated()``` does not create the database based on the migration history and therefore it doesn't let the database to be updated using migrations [1].
