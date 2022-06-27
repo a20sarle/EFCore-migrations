@@ -90,7 +90,7 @@ Package manager Console                             | CLI                       
 `update-database -migration:"<migrationname>"`      | ?                                          | Rollback to a specific version of the database 
 `remove-migration`                                  | `dotnet ef migrations remove`              | Removes the last migration
 `get-migration`                                     | `dotnet ef migrations list`                | See what migrations are applied in the database
-`update-database -migration 0`                      | ?                                          | Reset and empty the database (all data and tables will be lost)
+`update-database -migration 0`                      | ?                                          | Reset and empty the database (all data and tables will be lost). To                                                                                                    get a completely new start all tables in the database needs to be                                                                                                      dropped and the migrations folder in the project needs to be                                                                                                            deleted.
 
 
 ## Update database Step by step
