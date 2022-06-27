@@ -39,6 +39,10 @@
                 entity.Property(e => e.MiddleName)
                     .HasColumnName("middlename")
                     .HasMaxLength(255);
+
+                entity.Property(e => e.TestColumn)
+                    .HasColumnName("testcolumn")
+                    .HasMaxLength(255);
             });
         }
     }
