@@ -31,6 +31,11 @@
                     .HasColumnName("firstname")
                     .HasMaxLength(255)
                     .IsRequired();
+
+                entity.Property(e => e.LastName)
+                    .HasColumnName("lastname")
+                    .HasMaxLength(255)
+                    .IsRequired();
             });
         }
     }
