@@ -1,9 +1,11 @@
 ﻿namespace MigrationCodeFirst.Models
 {
+    using EntityFrameworkExample.Models;
     using Microsoft.EntityFrameworkCore;
     public class SqlContext : DbContext
     {
         public virtual DbSet<SqlWorker>? Workers { get; set; }
+        //public virtual DbSet<SqlExcludeInMigration>? Excludes { get; set; }
 
         public SqlContext()
         {
@@ -36,6 +38,20 @@
                     .HasColumnName("lastname")
                     .HasMaxLength(255)
                     .IsRequired();
+
+                entity.ToTable("ExcludeFromMigrations", t => t.ExcludeFromMigrations());
+            });
+
+            modelBuilder.Entity<SqlExcludeInMigration>(entityExclude =>
+            {
+                // Will not create the ExcludeFromMigrations table, but SqlExcludeInMigration
+                // is still included in the model and can be used normally
+                entityExclude.ToTable("ExcludeFromMigrations", t => t.ExcludeFromMigrations());
+
+                // must hade key
+                entityExclude.HasKey(e => e.Id);
+
+                // https://docs.microsoft.com/en-us/ef/core/modeling/entity-types?tabs=data-annotations
             });
         }
     }
